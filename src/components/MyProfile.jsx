@@ -6,11 +6,11 @@ const ProfilePhoto = ({ photo }) => {
   return (
     <div className=" m-auto relative mt-[26.7px]  flex justify-between items-center">
       <img
-        className="w-[88.89px] h-[88.89px] relative rounded-full shadow border border-slate-50"
+        className="w-[88.89px] h-[88.89px] max-sm:w-[71.24px] max-sm:h-[71.24px] relative rounded-full shadow border border-slate-50"
         src="https://via.placeholder.com/89x89"
       />
-      <div className="w-[82.44px] h-[19.89px] px-[14.22px] py-[4.44px] bg-indigo-50 rounded-[88.89px] mr-4 ">
-        <div className="text-stone-900 whitespace-nowrap text-opacity-80 text-[8.89px] font-medium">
+      <div className="w-[82.44px] h-[19.89px]  px-[14.22px] py-[4.44px] bg-indigo-50 rounded-[88.89px] mr-4 flex items-center justify-center">
+        <div className="text-stone-900 whitespace-nowrap text-opacity-80 text-[8.89px]  font-medium">
           Upload Photo
         </div>
       </div>
@@ -37,7 +37,7 @@ const ContactInfoContainerReusable = ({ label, input, edit }) => {
 };
 const ContactInfo = () => {
   return (
-    <div className="md:mt-[21px] flex flex-col gap-[17.22px] border rounded-[4.444px] py-[16px] px-[14.22px] ">
+    <div className="mt-[21px] flex flex-col gap-[17.22px] border rounded-[4.444px] py-[16px] px-[14.22px] ">
       <ContactInfoContainerReusable
         label={"Your Name"}
         input={"Dikshant Solanki"}
@@ -70,7 +70,7 @@ const AboutUser = ({ Username }) => {
         </div>
         <EditButton />
       </div>
-      <div className="w-[267.56px] max-xs:w-full text-zinc-700 text-opacity-80 text-[10.67px] max-xs:text-[8.55px] font-normal tracking-tight">
+      <div className="w-full leading-[normal] max-xs:w-full  text-zinc-700 text-opacity-80 text-[10.67px] max-xs:text-[8.55px] font-normal tracking-tight">
         Lorem ipsum dolor sit amet consectetur. Erat auctor a aliquam vel congue
         luctus. Leo diam cras neque mauris ac arcu elit ipsum dolor sit amet
         consectetur.
@@ -125,7 +125,7 @@ const ProfessionalDetails = () => {
 const Certifications = () => {
   return (
     <div className="  flex flex-col gap-[14px]  justify-between rounded-[4.444px] py-[16px] ">
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center pr-[10px]">
         <div className="text-neutral-800 text-opacity-90 text-[10.67px] font-medium">
           Certifications
         </div>
@@ -181,7 +181,7 @@ const Experience = () => {
 
 const Education = ({ college, year, degreeType }) => {
   return (
-    <div className="mt-[21px] flex flex-col gap-[10px]  rounded-[4.444px] mb-[37.33px] max-md:mb-[21px]">
+    <div className="mt-[21px] flex flex-col gap-[10px]  rounded-[4.444px] mb-[37.33px] max-md:mb-[21px] ">
       <div className="flex justify-between items-center pr-[10px]">
         <p className="text-neutral-800 text-opacity-90 text-[10.67px] font-medium">
           Education
@@ -210,21 +210,21 @@ const Education = ({ college, year, degreeType }) => {
 
 const MyProfile = () => {
   return (
-    <div className="md:ml-[20%] max-xs:w-[95%] bg-blue-200 max-md:m-auto flex justify-center flex-col relative">
-      <div className=" w-full m-auto h-[169px] max-sm:h-[60px] top-[18.22px] bg-indigo-900 absolute rounded-[8.89px] max-md:rounded-[2.78px] border border-white">
-        <div className="left-[14.22px] top-[14.22px] max-xs:left-[5px] max-xs:top-[5px] absolute text-white text-[10.67px] max-sm:text-[5px] font-medium">
+    <div className="profile-container sm:ml-[240px] max-w-[752px] flex  items-center max-sm:max-w-[95%] max-sm: m-auto  flex-col relative">
+      <div className=" w-full m-auto h-[169px] max-sm:h-[60px] max-w-[752px] top-[18.22px]  bg-indigo-900 relative rounded-[8.89px] max-md:rounded-[2.78px] border border-white">
+        <span className="left-[14.22px] w-min top-[14.22px] max-sm:left-[5px] max-sm:top-[-4px] relative text-white text-[10.67px] max-sm:text-[5px] font-medium">
           MY PROFILE
-        </div>
+        </span>
       </div>
-      <div className="profile-section w-[90%] max-sm:w-[85%] bg-white top-[110px]  max-sm:top-[50px] m-auto overflow-hidden md:flex h-full relative rounded-[8.89px] shadow border border-gray-200">
-        <div className="left-bio-section max-md:w-80%  md:w-1/2 relative px-[1.5rem]">
+      <div className="profile-section w-[92%]  top-[113.22px] max-w-[680px] max-sm:w-[86%] bg-white max-sm:top-[50px] m-auto overflow-hidden md:flex absolute rounded-[8.89px] max-sm:rounded-[7.125px] shadow border border-gray-200">
+        <div className="left-bio-section max-md:w-80%  md:w-1/2 relative px-[20.67px] max-md:px-[18px]">
           <ProfilePhoto />
           <ContactInfo />
           <AboutUser />
           <Skills />
         </div>
 
-        <div className="right-professional-section max-md:w-80%  md:w-1/2 relative px-[1.5rem] ">
+        <div className="right-professional-section max-md:w-80%  md:w-1/2 relative px-[1.5rem] max-md:px-[18px]">
           <ProfessionalDetails />
           <Certifications />
           <Experience />
