@@ -1,16 +1,13 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
-import Navbar from "@/components/Navbar";
-import Sidebar from "@/components/Sidebar";
-import MyProfile from "@/components/MyProfile";
+import signup from './auth/signup';
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
     <main className="relative w-[100%]">
-      <Navbar />
-      <Sidebar />
-      <MyProfile />
+      <signup/>
     </main>
   );
 }

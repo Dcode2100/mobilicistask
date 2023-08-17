@@ -210,7 +210,7 @@ const Education = ({ college, year, degreeType }) => {
 
 const MyProfile = () => {
   return (
-    <div className="profile-container sm:ml-[240px] max-w-[752px] flex  items-center max-sm:max-w-[95%] max-sm: m-auto  flex-col relative">
+    <div className="profile-container sm:ml-[240px] max-w-[752px] flex  items-center max-sm:max-w-[95%] max-sm:m-auto  flex-col relative">
       <div className=" w-full m-auto h-[169px] max-sm:h-[60px] max-w-[752px] top-[18.22px]  bg-indigo-900 relative rounded-[8.89px] max-md:rounded-[2.78px] border border-white">
         <span className="left-[14.22px] w-min top-[14.22px] max-sm:left-[5px] max-sm:top-[-4px] relative text-white text-[10.67px] max-sm:text-[5px] font-medium">
           MY PROFILE
