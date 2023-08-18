@@ -1,13 +1,15 @@
-import React from "react";
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleEditing, updateProfileField } from '@/redux/profileSlice'; 
 import EditButton from "./ui/EditButton";
-import professionalDetailsSvg from "../../public/assets/svg/professionalDetailsSvg.svg";
+import ContactInfo from './profileComponents/ContactInfo';
 
 const ProfilePhoto = ({ photo }) => {
   return (
     <div className=" m-auto relative mt-[26.7px]  flex justify-between items-center">
       <img
         className="w-[88.89px] h-[88.89px] max-sm:w-[71.24px] max-sm:h-[71.24px] relative rounded-full shadow border border-slate-50"
-        src="https://via.placeholder.com/89x89"
+        src="/assets/svg/usericon.png"
       />
       <div className="w-[82.44px] h-[19.89px]  px-[14.22px] py-[4.44px] bg-indigo-50 rounded-[88.89px] mr-4 flex items-center justify-center">
         <div className="text-stone-900 whitespace-nowrap text-opacity-80 text-[8.89px]  font-medium">
@@ -19,46 +21,10 @@ const ProfilePhoto = ({ photo }) => {
 };
 ``;
 
-const ContactInfoContainerReusable = ({ label, input, edit }) => {
-  return (
-    <div className="flex justify-between relative">
-      <div className="left-section flex flex-col gap-[8.33px]">
-        <p className="title text-stone-900 text-opacity-70 text-[10.67px] font-medium">
-          {label}
-        </p>
-        <input
-          className="text-neutral-800 text-opacity-90 text-[10.67px] font-medium"
-          value={input}
-        ></input>
-      </div>
-      <EditButton />
-    </div>
-  );
-};
-const ContactInfo = () => {
-  return (
-    <div className="mt-[21px] flex flex-col gap-[17.22px] border rounded-[4.444px] py-[16px] px-[14.22px] ">
-      <ContactInfoContainerReusable
-        label={"Your Name"}
-        input={"Dikshant Solanki"}
-        edit={"edit"}
-      />
-      <ContactInfoContainerReusable
-        label={"Email"}
-        input={"dikshant214@gmail.com"}
-        edit={"edit"}
-      />
-      <ContactInfoContainerReusable
-        label={"Phone Number"}
-        input={"+91 8412687423"}
-        edit={"edit"}
-      />
-    </div>
-  );
-};
+
 const AboutUser = ({ Username }) => {
   return (
-    <div className="mt-[21px] flex flex-col gap-[17.22px] border rounded-[4.444px] py-[16px] px-[14.22px] ">
+    <div className="mt-[21px] flex shadow flex-col gap-[17.22px] border rounded-[4.444px] py-[16px] px-[14.22px] ">
       <div className="w-full flex justify-between items-center">
         <div>
           <span className="text-neutral-800 text-opacity-90 text-sm font-medium">
@@ -88,7 +54,7 @@ const SkillsReusable = ({ title }) => {
 };
 const Skills = () => {
   return (
-    <div className="mt-[21px] flex flex-col gap-[17.22px] border rounded-[4.444px] py-[16px] px-[14.22px] mb-[37.33px] max-md:mb-[21px]">
+    <div className="mt-[21px] flex  shadow flex-col gap-[17.22px] border rounded-[4.444px] py-[16px] px-[14.22px] mb-[37.33px] max-md:mb-[21px]">
       <div className="flex justify-between items-center">
         <p className="text-neutral-800 text-opacity-90 text-sm font-medium">
           Skills
@@ -104,7 +70,7 @@ const Skills = () => {
 const ProfessionalDetails = () => {
   return (
     <div
-      className="md:mt-[21px] flex flex-row gap-[17.22px] border justify-between rounded-[4.444px] py-[16px] px-[14.22px]
+      className="md:mt-[21px] shadow flex flex-row gap-[17.22px] border justify-between rounded-[4.444px] py-[16px] px-[14.22px]
     "
     >
       <div>
@@ -115,9 +81,8 @@ const ProfessionalDetails = () => {
           This are the professional details shown to users in the app.
         </div>
       </div>
-      <div className="w-12 h-12 relative bg-blue-200">
-        <professionalDetailsSvg />
-      </div>
+      <img className="w-12 h-12 relative bg-blue-200" src="/assets/svg/Stars.png">
+      </img>
     </div>
   );
 };
@@ -131,8 +96,8 @@ const Certifications = () => {
         </div>
         <EditButton />
       </div>
-      <div className="h-[46px] relative flex justify-between bg-white rounded-[26.67px] border border-stone-300 items-center">
-        <div className="h-[24px] w-[23px] ml-[22px] bg-blue-300">SVG</div>
+      <div className="h-[46px] relative  shadow flex justify-between bg-white rounded-[26.67px] border border-stone-300 items-center">
+        <img  className="h-[24px] w-[23px] ml-[22px]" src={"/assets/svg/Vector.svg"}/>
         <div className="flex  flex-col items-center m-auto gap-[6px]">
           <div className="text-zinc-700 text-opacity-80 text-xs font-normal tracking-tight">
             Python
@@ -181,7 +146,7 @@ const Experience = () => {
 
 const Education = ({ college, year, degreeType }) => {
   return (
-    <div className="mt-[21px] flex flex-col gap-[10px]  rounded-[4.444px] mb-[37.33px] max-md:mb-[21px] ">
+    <div className="mt-[21px] flex flex-col gap-[10px] rounded-[4.444px] mb-[37.33px] max-md:mb-[21px] ">
       <div className="flex justify-between items-center pr-[10px]">
         <p className="text-neutral-800 text-opacity-90 text-[10.67px] font-medium">
           Education
@@ -210,8 +175,8 @@ const Education = ({ college, year, degreeType }) => {
 
 const MyProfile = () => {
   return (
-    <div className="profile-container sm:ml-[240px] max-w-[752px] flex  items-center max-sm:max-w-[95%] max-sm:m-auto  flex-col relative">
-      <div className=" w-full m-auto h-[169px] max-sm:h-[60px] max-w-[752px] top-[18.22px]  bg-indigo-900 relative rounded-[8.89px] max-md:rounded-[2.78px] border border-white">
+    <div className="profile-container  max-w-[752px] flex  items-center max-sm:max-w-[95%] mt-[18.22px] ml-[18.22px] max-sm:m-auto  flex-col relative">
+      <div className=" w-full m-auto h-[169px] max-sm:h-[60px] max-w-[752px]   bg-indigo-900 relative rounded-[8.89px] max-md:rounded-[2.78px] border border-white">
         <span className="left-[14.22px] w-min top-[14.22px] max-sm:left-[5px] max-sm:top-[-4px] relative text-white text-[10.67px] max-sm:text-[5px] font-medium">
           MY PROFILE
         </span>

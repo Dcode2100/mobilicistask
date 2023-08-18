@@ -2,8 +2,8 @@ import React from "react";
 
 const Navbar = ({ user }) => {
   return (
-    <nav className="w-full px-[44.44px] max-md:px-[1rem] max-sm:px-[2rem] pt-4 pb-[15.57px] max-md:py-0 bg-white border-b border-stone-300 justify-end max-md:justify-between items-center max-md:w-full inline-flex">
-      <div className="menu-icon md:hidden flex gap-[7px]">
+    <nav className="w-full flex px-[44.44px] max-md:px-[1rem] max-sm:px-[2rem] pt-4 pb-[15.57px] max-md:py-0 bg-white border-b border-stone-300 justify-end max-sm:justify-between items-center  ">
+      <div className="menu-icon sm:hidden flex gap-[7px]">
         <button className="">
           <svg
             xmlns="http://www.w3.org/2000/svg"

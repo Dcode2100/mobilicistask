@@ -1,13 +1,15 @@
-import React from 'react';
-import Sidebar from './Sidebar';
-import Navbar from './Navbar';
+import React from "react";
+import Sidebar from "./Sidebar";
+import Navbar from "./Navbar";
 
 const Layout = ({ children }) => {
   return (
-    <div >
+    <div className="flex relative">
       <Sidebar />
-      <Navbar />
-      <main className=''>{children}</main>
+      <div className="w-full ">
+        <Navbar />
+        <main className="">{children}</main>
+      </div>
     </div>
   );
 };

@@ -34,7 +34,7 @@ const Sidebar = () => {
   
 
   return (
-    <div className="bg-white max-sm:hidden h-screen flex-col w-[240px] pt-8 z-1 flex justify-between fixed top-0 border">
+    <div className="bg-white max-sm:hidden h-screen flex-col w-[20%] max-lg:w-[30%]  pt-8 z-1 flex justify-between  border">
       <div className="flex flex-col gap-[36px]">
         <div className="w-full flex justify-end pr-[14px]">
           <h3 className="text-neutral-800 text-opacity-90 text-2xl font-medium w-min h-[47px] flex justify-end px-5 items-center rounded-[8.89px] shadow border border-black border-opacity-20">
